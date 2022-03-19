@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = datasource
         tableView.delegate = self
         
-        tableView.rowHeight = 100.0
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         
         tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
@@ -152,9 +152,6 @@ extension ViewController {
             cell.imageView?.image = self.viewModel.dataImage
             cell.imageView?.backgroundColor = UIColor.darkGray
             cell.detailTextLabel?.text = rowModel.date
-            let label = UILabel(frame: CGRect(x: cell.frame.origin.x + 20, y: 30, width: cell.frame.width, height: cell.frame.width))
-            label.text = rowModel.explanation
-            label.textColor = UIColor.red
 
             return cell
         }
